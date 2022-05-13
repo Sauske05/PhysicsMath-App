@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../widgets/Main_drawer.dart';
 import './Math_mainscreen.dart';
 import './Physics_mainscreen.dart';
-import '../pastpaper folder/pastpapers.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -27,7 +26,10 @@ class _MyHomePageState extends State<MyHomePage> {
             childAspectRatio: 0.80),
         children: [
           Container(
-            color: Colors.amber,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.amber,
+            ),
             child: InkWell(
               onTap: () {
                 Navigator.push(
@@ -39,7 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            color: Colors.purple,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.purple,
+            ),
             child: InkWell(
               onTap: () {
                 Navigator.push(

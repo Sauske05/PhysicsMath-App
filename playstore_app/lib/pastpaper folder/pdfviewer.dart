@@ -19,7 +19,7 @@ class _PDFViewerState extends State<PDFViewer> {
   String url = "";
   Future<void> downloadURLExample() async {
     String downloadURL = await firebase_storage.FirebaseStorage.instance
-        .ref('Past Papers/${widget.year}/${widget.month}/${widget.title}')
+        .ref('Past Papers/${widget.year}/${widget.month}/${widget.title}.pdf')
         .getDownloadURL();
     print(downloadURL);
     url = downloadURL;
@@ -36,7 +36,7 @@ class _PDFViewerState extends State<PDFViewer> {
   Future<File?> downloadFile(String url) async {
     final dir = await getApplicationDocumentsDirectory();
     final file =
-        File('Past Papers/${widget.year}/${widget.month}/${widget.title}');
+        File('Past Papers/${widget.year}/${widget.month}/${widget.title}.pdf');
     final response = await Dio().get(url);
 
     final raf = file.openSync(mode: FileMode.write);
